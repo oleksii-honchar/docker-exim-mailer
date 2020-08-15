@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  ta-dashboard-mailer:
+    build:
+      context: ./
+      dockerfile: ./mailer.Dockerfile
+    environment:
+      - POSTMASTER="oleksii.honchar@agileengine.com"
+      - MAILNAME="localhost"
+#      - RELAY_HOST
+#      - RELAY_PORT
+#      - RELAY_USERNAME
+#      - RELAY_PASSWORD
+    ports:
+      - "25:25"
+
+networks:
+  default:
+
+volumes:
+  ta-dashboard-db-data:
+
+
